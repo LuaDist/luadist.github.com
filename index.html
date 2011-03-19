@@ -52,7 +52,7 @@ liblua51.so
 								<p>Follow the installation instructions on Wiki.</p>
 							</div>
 							<div class="col-2">
-								<p class="button"><a href="https://github.com/LuaDist/luadist.github.com/wiki/Installation">Install LuaDist!</a></p>
+								<p class="button"><a href="https://github.com/LuaDist/luadist.github.com/wiki/LuaDist%3A-Installation">Install LuaDist!</a></p>
 							</div>
 						</div>
 					</li>
@@ -88,17 +88,16 @@ liblua51.so
 								<p>Most LuaDist modules are not that complex:</p>
 							</div>
 							<div class="col-2">
-								<pre><code><span style="color: #8a9597;">PROJECT</span>(<span style="color: #a2a96f;">lpeg C</span>)
-<span style="color: #8a9597;">CMAKE_MINIMUM_REQUIRED</span>(<span style="color: #a2a96f;">VERSION 2.6</span>)
-<span style="color: #8a9597;">INCLUDE</span>(<span style="color: #a2a96f;">dist.cmake</span>)
+								<pre><code><span style="color: #8a9597;">project</span> ( <span style="color: #a2a96f;">lpeg C</span> )
+<span style="color: #8a9597;">cmake_minimum_required</span> ( <span style="color: #a2a96f;">VERSION 2.6</span> )
+<span style="color: #8a9597;">include</span> ( <span style="color: #a2a96f;">dist.cmake</span> )
 
-<span style="color: #8a9597;">ADD_LUA_MODULE</span>(<span style="color: #a2a96f;">lpeg lpeg.c</span>)
-<span style="color: #8a9597;">ADD_LUA_TEST</span>(<span style="color: #a2a96f;">test.lua</span>)
+<span style="color: #8a9597;">install_lua_module</span> ( <span style="color: #a2a96f;">lpeg lpeg.c</span> )
+<span style="color: #8a9597;">install_lua_module</span> ( <span style="color: #a2a96f;">re re.lua</span> )
+<span style="color: #8a9597;">add_lua_test</span> ( <span style="color: #a2a96f;">test.lua</span> )
 
-<span style="color: #8a9597;">INSTALL</span>(<span style="color: #a2a96f;">TARGETS lpeg ${INSTALL_CMOD}</span>)
-<span style="color: #8a9597;">INSTALL</span>(<span style="color: #a2a96f;">FILES re.lua ${INSTALL_LMOD}</span>)
-<span style="color: #8a9597;">INSTALL</span>(<span style="color: #a2a96f;">FILES lpeg.html DESTINATION ${INSTALL_DOC}</span>)
-<span style="color: #8a9597;">INSTALL</span>(<span style="color: #a2a96f;">FILES test.lua DESTINATION ${INSTALL_TEST}</span>)</code></pre>
+<span style="color: #8a9597;">install_doc</span> ( <span style="color: #a2a96f;"> lpeg.html </span> )
+<span style="color: #8a9597;">install_test</span> ( <span style="color: #a2a96f;"> test.lua </span> ) </code></pre>
 							</div>
 						</div>
 					</li>

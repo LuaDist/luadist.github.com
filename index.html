@@ -1,119 +1,79 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
-	<head>
-		<title>LuaDist &mdash; CMake based Lua distribution.</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<link rel="stylesheet" href="./css/screen.css" type="text/css" media="screen" />
-		<link rel="stylesheet" href="./css/fonts/chunkfive/chunkfive.css" type="text/css" media="screen" />
-		<meta name="original site style" content="http://mxcl.github.com/homebrew/" /> 
-	</head>
-	<body>
-		<div id="wrap">
-			<div id="header">
-				<h1><a href="./">LuaDist</a></h1>
-				<p id="subtitle"><strong>CMake based Lua distribution for Windows, OSX, Linux and Unix systems.</strong></p>
-			</div>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>LuaDist by LuaDist</title>
+  </head>
 
-			<div id="informations">
-				<ul>
-					<li>
-						<div class="group row">
-							<div class="col-1">
-								<p>LuaDist is a package manager for the Lua language.</p>
-							</div>
-							<div class="col-2">
-								<pre><code><span style="color: #e3d796;">$</span> luadist install luaexpat
-<span style="color: #e3d796;">$</span> lua
-<span style="color: #e3d796;">&gt;</span> require "lxp"</code></pre>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="group row">
-							<div class="col-1">
-								<p>It supports deployment into standalone directories.</p>
-							</div>
-							<div class="col-2">
-								<pre><code><span style="color: #e3d796;">$</span> luadist /home/my_lua install lua luasocket
-<span style="color: #e3d796;">$</span> ls /home/my_lua
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>LuaDist</h1>
+          <h2>LuaDist - The Lua language distribution</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/LuaDist" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h3>Welcome to LuaDist</h3>
+
+<p>CMake based Lua distribution for Windows, OSX, Linux and Unix systems.</p>
+
+<pre><code>$ luadist install luaexpat
+$ lua
+&gt; require "lxp"
+</code></pre>
+
+<p>It supports deployment into standalone directories.</p>
+
+<pre><code>$ luadist /home/my_lua install lua luasocket
+$ ls /home/my_lua
 bin lib include share
-<span style="color: #e3d796;">$</span> ls /home/my_lua/bin
+$ ls /home/my_lua/bin
 lua luac
-<span style="color: #e3d796;">$</span> ls /home/my_lua/lib
-liblua51.so
-<span style="color: #e3d796;">$</span> /home/my_lua/bin/lua
-<span style="color: #e3d796;">&gt;</span> require "socket"</code></pre>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="group row">
-							<div class="col-1">
-								<p>Follow the installation instructions on Wiki.</p>
-							</div>
-							<div class="col-2">
-								<p class="button"><a href="https://github.com/LuaDist/Repository/wiki/LuaDist%3A-Installation">Install LuaDist!</a></p>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="group row">
-							<div class="col-1">
-								<p>Use LuaDist functionality from Lua.</p>
-							</div>
-							<div class="col-2">
-								<pre><code><span style="color: #e3d796;">$</span> lua
-<span style="color: #e3d796;">&gt;</span> local ld = require "dist"
-<span style="color: #e3d796;">&gt;</span> ld.install("luaexpat")</code></pre>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="group row">
-							<div class="col-1">
-								<p>Install modules manually so you can integrate them into your build process.</p>
-							</div>
-							<div class="col-2">
-								<pre><code><span style="color: #e3d796;">$</span> git clone git://github.com/LuaDist/lua.git lua
-<span style="color: #e3d796;">$</span> cd lua
-<span style="color: #e3d796;">$</span> mkdir _build &amp;&amp; cd _build
-<span style="color: #e3d796;">$</span> cmake .. <span style="color: #666;"># or use ccmake or cmake-gui</span>
-<span style="color: #e3d796;">$</span> make install <span style="color: #666;"># or cmake --build . --target install</span></code></pre>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="group row">
-							<div class="col-1">
-								<p>Most LuaDist modules are not that complex:</p>
-							</div>
-							<div class="col-2">
-								<pre><code><span style="color: #8a9597;">project</span> ( <span style="color: #a2a96f;">lpeg C</span> )
-<span style="color: #8a9597;">cmake_minimum_required</span> ( <span style="color: #a2a96f;">VERSION 2.6</span> )
-<span style="color: #8a9597;">include</span> ( <span style="color: #a2a96f;">dist.cmake</span> )
+$ ls /home/my_lua/lib
+liblua.so
+$ /home/my_lua/bin/lua
+&gt; require "socket"
+</code></pre>
 
-<span style="color: #8a9597;">install_lua_module</span> ( <span style="color: #a2a96f;">lpeg lpeg.c</span> )
-<span style="color: #8a9597;">install_lua_module</span> ( <span style="color: #a2a96f;">re re.lua</span> )
-<span style="color: #8a9597;">add_lua_test</span> ( <span style="color: #a2a96f;">test.lua</span> )
+<p>Use LuaDist functionality from Lua.</p>
 
-<span style="color: #8a9597;">install_doc</span> ( <span style="color: #a2a96f;"> lpeg.html </span> )
-<span style="color: #8a9597;">install_test</span> ( <span style="color: #a2a96f;"> test.lua </span> ) </code></pre>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="group row">
-								<p>LuaDist is fully capable package manager that can install LuaJIT, SciTE and other Lua related software.</p>
-						</div>
-					</li>
-					<li>
-						<div class="row group button button-large">
-							<p><a href="https://github.com/LuaDist/Repository">Check out our repository!</a></p>
-						</div>
-					</li>
-				</ul>
-			</div>
-		</div>
-		<a href="http://github.com/LuaDist"><img style="position: absolute; top: 0; right: 0; border: 0;" src="img/gh.png" alt="Visit us on GitHub" /></a>
-	</body>
+<pre><code>$ lua
+&gt; local ld = require "dist"
+&gt; ld.install("luaexpat")
+</code></pre>
+
+<p>Install modules manually so you can integrate them into your projects directly.</p>
+
+<pre><code>$ git clone git://github.com/LuaDist/lua.git lua
+$ cd lua
+$ mkdir _build &amp;&amp; cd _build
+$ cmake .. # or use ccmake or cmake-gui
+$ make install # or cmake --build . --target install
+</code></pre>
+        </section>
+
+        <footer>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
 </html>

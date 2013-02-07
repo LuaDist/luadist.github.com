@@ -1,79 +1,106 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <title>LuaDist by LuaDist</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <title>LuaDist by LuaDist</title>
   </head>
-
   <body>
-    <div id="container">
-      <div class="inner">
+    <div class="wrapper">
+      <header>
+        <h1>LuaDist</h1>
+        <p>A distribution of the Lua programming language</p>
 
-        <header>
-          <h1>LuaDist</h1>
-          <h2>LuaDist - The Lua language distribution</h2>
-        </header>
 
-        <section id="downloads" class="clearfix">
-          <a href="https://github.com/LuaDist" id="view-on-github" class="button"><span>View on GitHub</span></a>
-        </section>
+        <p class="view"><a href="https://github.com/LuaDist">View My GitHub Profile</a></p>
 
-        <hr>
+      </header>
+      <section>
+        <h3>About LuaDist</h3>
 
-        <section id="main_content">
-          <h3>Welcome to LuaDist</h3>
+<p>LuaDist is a true multi-platform package management system that aims to provide both source and binary repository of modules for the Lua programming language. </p>
 
-<p>CMake based Lua distribution for Windows, OSX, Linux and Unix systems.</p>
+<hr><h3>Downloads</h3>
 
-<pre><code>$ luadist install luaexpat
-$ lua
-&gt; require "lxp"
-</code></pre>
+<ul>
+<li>LuaDist 0.2.2 + batteries 0.9.8
 
-<p>It supports deployment into standalone directories.</p>
+<ul>
+<li><a href="downloads/LuaDist-batteries-0.9.8-Windows-x86.zip">Windows (x86)</a></li>
+<li><a href="downloads/LuaDist-batteries-0.9.8-Linux-x86_64.zip">Linux (x86_64)</a></li>
+<li><a href="downloads/LuaDist-batteries-0.9.8-Darwin-x86_64.zip">Mac OS X (x86_64)</a></li>
+</ul>
+</li>
+</ul><hr><h3>Install</h3>
 
-<pre><code>$ luadist /home/my_lua install lua luasocket
-$ ls /home/my_lua
+<p>You can install LuaDist from source using the following one-liner. </p>
+
+<div class="highlight"><pre><span class="nb">echo</span> <span class="s2">"$(curl -fksSL http://goo.gl/1wnHP)"</span> | bash
+</pre></div>
+
+<p>Windows users can follow our detailed <a href="https://github.com/LuaDist/Repository/wiki/LuaDist%3A-Installation">install instructions</a>.</p>
+
+<hr><h3>Basic Use</h3>
+
+<p>Install a package</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>./luadist install luaexpat
+<span class="nv">$ </span>./lua
+&gt; require <span class="s2">"lxp"</span>
+</pre></div>
+
+<hr><p>LuaDist supports deployment into standalone directories.</p>
+
+<div class="highlight"><pre><span class="nv">$ </span>./luadist /home/my_lua install lua luasocket
+<span class="nv">$ </span>ls /home/my_lua
 bin lib include share
-$ ls /home/my_lua/bin
+<span class="nv">$ </span>ls /home/my_lua/bin
 lua luac
-$ ls /home/my_lua/lib
+<span class="nv">$ </span>ls /home/my_lua/lib
 liblua.so
-$ /home/my_lua/bin/lua
-&gt; require "socket"
-</code></pre>
+<span class="nv">$ </span>/home/my_lua/bin/lua
+&gt; require <span class="s2">"socket"</span>
+</pre></div>
 
-<p>Use LuaDist functionality from Lua.</p>
+<hr><p>Use LuaDist functionality from Lua.</p>
 
-<pre><code>$ lua
-&gt; local ld = require "dist"
-&gt; ld.install("luaexpat")
-</code></pre>
+<div class="highlight"><pre><span class="nv">$ </span>./lua
+&gt; <span class="nb">local </span><span class="nv">ld</span> <span class="o">=</span> require <span class="s2">"dist"</span>
+&gt; ld.install<span class="o">(</span><span class="s2">"luaexpat"</span><span class="o">)</span>
+</pre></div>
 
-<p>Install modules manually so you can integrate them into your projects directly.</p>
+<hr><p>Install modules manually so you can integrate them into your projects directly.</p>
 
-<pre><code>$ git clone git://github.com/LuaDist/lua.git lua
-$ cd lua
-$ mkdir _build &amp;&amp; cd _build
-$ cmake .. # or use ccmake or cmake-gui
-$ make install # or cmake --build . --target install
-</code></pre>
-        </section>
+<div class="highlight"><pre><span class="nv">$ </span>git clone git://github.com/LuaDist/lua.git lua
+<span class="nv">$ </span><span class="nb">cd </span>lua
+<span class="nv">$ </span>mkdir _build <span class="o">&amp;&amp;</span> <span class="nb">cd </span>_build
+<span class="nv">$ </span>cmake .. <span class="c"># or use ccmake or cmake-gui</span>
+<span class="nv">$ </span>make install <span class="c"># or cmake --build . --target install</span>
+</pre></div>
 
-        <footer>
-          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.
-        </footer>
+<hr><h3>Links</h3>
 
-        
-      </div>
+<ul>
+<li>
+<a href="https://github.com/LuaDist/Repository">Repository</a> - Main repository of modules</li>
+<li>
+<a href="https://github.com/LuaDist/Repository/issues">Issues</a> - Please report bugs here</li>
+<li>
+<a href="https://github.com/LuaDist/Repository/wiki">Wiki</a> - Wiki containing detailed documentation</li>
+</ul><hr>
+      </section>
+      <footer>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
     </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
   </body>
 </html>

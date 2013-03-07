@@ -1,28 +1,32 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>LuaDist by LuaDist</title>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="LuaDist : A distribution of the Lua programming language" />
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>LuaDist</title>
   </head>
+
   <body>
-    <div class="wrapper">
-      <header>
-        <h1>LuaDist</h1>
-        <p>A distribution of the Lua programming language</p>
 
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/LuaDist">View on GitHub</a>
 
-        <p class="view"><a href="https://github.com/LuaDist">View Our GitHub Profile</a></p>
+          <h1 id="project_title">LuaDist</h1>
+          <h2 id="project_tagline">A distribution of the Lua programming language</h2>
 
-      </header>
-      <section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
         <h3>About LuaDist</h3>
 
 <p>LuaDist is a true multi-platform package management system that aims to provide both source and binary repository of modules for the Lua programming language. </p>
@@ -79,7 +83,7 @@ liblua.so
 &gt; ld.install<span class="o">(</span><span class="s2">"luaexpat"</span><span class="o">)</span>
 </pre></div>
 
-<hr><p>Install modules manually so you can integrate them into your projects directly.</p>
+<hr><p>Install modules manually so you can integrate them into your projects directly. LuaDist relies on <a href="http://www.cmake.org">CMake</a> to generate native build system for your platform, compiler and IDE. For example you can build Lua directly from its repository using the following approach.</p>
 
 <div class="highlight"><pre><span class="nv">$ </span>git clone git://github.com/LuaDist/lua.git lua
 <span class="nv">$ </span><span class="nb">cd </span>lua
@@ -87,6 +91,8 @@ liblua.so
 <span class="nv">$ </span>cmake .. <span class="c"># or use ccmake or cmake-gui</span>
 <span class="nv">$ </span>make install <span class="c"># or cmake --build . --target install</span>
 </pre></div>
+
+<p>More information about <a href="https://github.com/LuaDist/Repository/wiki/LuaDist:-Manual-Installation">building and configuring packages manually</a> is available on our <a href="https://github.com/LuaDist/Repository/wiki">Wiki</a>.</p>
 
 <hr><h3>Links</h3>
 
@@ -101,11 +107,26 @@ liblua.so
 <a href="https://github.com/LuaDist/Repository/wiki/LuaDist%3A-Creating-Dists">How to contribute</a> - Quick guide to module creation</li>
 </ul>
       </section>
-      <footer>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
       </footer>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-39106542-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+
   </body>
 </html>
